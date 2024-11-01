@@ -20,10 +20,10 @@ jobs:
           9.x
     - name: Restore
       run: |
-        dotnet restore Pek.AspNetCore/Pek.AspNetCore.csproj
+        dotnet restore Pek.Swagger/Pek.Swagger.csproj
     - name: Build
       run: |
-        dotnet pack --no-restore --version-suffix $(date "+%Y.%m%d") -c Release -o out Pek.AspNetCore/Pek.AspNetCore.csproj
+        dotnet pack --no-restore --version-suffix $(date "+%Y.%m%d") -c Release -o out Pek.Swagger/Pek.Swagger.csproj
     - name: Publish
       run: |
         dotnet nuget push ./out/*.nupkg --skip-duplicate --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.nugetKey }}
