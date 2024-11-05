@@ -45,7 +45,9 @@ public static partial class Extensions
 
         services.AddSwaggerGen(options =>
         {
-            options.OperationFilter<SwaggerFileUploadFilter>();//add file fifter component
+            options.OperationFilter<SwaggerFileUploadFilter>();  //add file fifter component
+            options.DocumentFilter<CustomDocumentFilter>();  // 自定义处理
+
             // 使用解决冲突的策略
             options.ResolveConflictingActions(apiDescriptions =>
             {
