@@ -17,6 +17,7 @@
     <OutputPath>..\Bin</OutputPath>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <NoWarn>1701;1702;1591;NU5104;NU1505;NETSDK1138;CS7035</NoWarn>
     <!--禁止生成launchSettings.json-->
@@ -47,11 +48,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Pek.Common" Version="3.91.2024.1101-beta0145" />
+    <PackageReference Include="Pek.Common" Version="3.91.2024.1105-beta0546" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
   </ItemGroup>
 
   <ItemGroup>
