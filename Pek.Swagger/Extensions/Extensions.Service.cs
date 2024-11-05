@@ -7,7 +7,7 @@ using Pek.Swagger.OpenApi;
 
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace Pek.Swagger.Extensions;
+namespace Pek.Swagger;
 
 /// <summary>
 /// 扩展服务
@@ -60,7 +60,7 @@ public static partial class Extensions
     /// 注册Swagger接口文档
     /// </summary>
     /// <param name="app">应用程序生成器</param>
-    public static IApplicationBuilder UseSwagger(this IApplicationBuilder app)
+    public static IApplicationBuilder UsePekSwagger(this IApplicationBuilder app)
     {
         app.UseSwagger(); // 启用 Swagger
         app.UseSwaggerUI(options =>
