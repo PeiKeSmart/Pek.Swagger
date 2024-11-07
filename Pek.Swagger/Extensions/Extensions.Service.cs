@@ -73,6 +73,8 @@ public static partial class Extensions
             {
                 options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant()); // 为每个版本配置 Swagger 端点
             }
+
+            options.RoutePrefix = "help"; // Swagger 路由前缀
         });
         //给没有配置httpmethod的action添加默认操作
         app.AutoHttpMethodIfActionNoBind();
