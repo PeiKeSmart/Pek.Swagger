@@ -22,6 +22,8 @@
     <NoWarn>1701;1702;1591;NU5104;NU1505;NETSDK1138;CS7035</NoWarn>
     <!--禁止生成launchSettings.json-->
     <NoDefaultLaunchSettingsFile>True</NoDefaultLaunchSettingsFile>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <WarningsAsErrors>CA2007</WarningsAsErrors>
 
     <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
     <!--<StaticWebAssetsEnabled>false</StaticWebAssetsEnabled>-->
@@ -53,7 +55,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Pek.Common" Version="4.0.2025.104-beta1049" />
+    <PackageReference Include="Pek.Common" Version="4.0.2025.106-beta0936" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
   </ItemGroup>
 
