@@ -1,8 +1,7 @@
 ﻿using Asp.Versioning.ApiExplorer;
 
 using Microsoft.Extensions.Options;
-using Microsoft.OpenApi.Models;
-
+using Microsoft.OpenApi;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Pek.Swagger.OpenApi;
@@ -35,20 +34,13 @@ public class ConfigureSwaggerOptions : IConfigureOptions<SwaggerGenOptions>
         });
 
         // 添加安全方案
-        options.AddSecurityRequirement(new OpenApiSecurityRequirement
+        options.AddSecurityRequirement(document => new OpenApiSecurityRequirement
+        {
             {
-                {
-                    new OpenApiSecurityScheme
-                    {
-                        Reference = new OpenApiReference
-                        {
-                            Type = ReferenceType.SecurityScheme, // 类型为安全方案
-                            Id = "Bearer" // 引用 ID
-                        }
-                    },
-                    new string[] { } // 允许的范围
-                }
-            });
+                new OpenApiSecuritySchemeReference("Bearer", document, null),
+                new List<String>() // 允许的范围
+            }
+        });
     }
 
     private static OpenApiInfo CreateInfoForApiVersion(ApiVersionDescription apiVersionDescription) // 创建版本信息
